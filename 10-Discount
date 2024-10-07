@@ -1,0 +1,23 @@
+def calculate_discount(original_price):
+    discount_rate = 0.10  # 10% discount
+    discount_amount = original_price * discount_rate
+    discounted_price = original_price - discount_amount
+    return discounted_price
+
+def main():
+    try:
+        original_price = float(input("Enter the original price: $"))
+        if original_price < 0:
+            print("Error: Price cannot be negative.")
+            return
+
+        final_price = calculate_discount(original_price)
+        
+        print(f"Original price: ${original_price:.2f}")
+        print(f"Discounted price (10% off): ${final_price:.2f}")
+        print(f"You save: ${original_price - final_price:.2f}")
+    except ValueError:
+        print("Error: Please enter a valid number for the price.")
+
+if __name__ == "__main__":
+    main()
